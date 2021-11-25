@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import {oit} from '../db.js'
 
 const suffix=" | OIT - โรงเรียนโพนงามพิทยานุกูล"
 
-const routes = [
+let routes = [
   {
     path: '/',
     name: 'Home',
@@ -19,6 +20,17 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
+
+oit.forEach((value)=>{
+  if(value.type=="inner-hypertext"){
+    routes.push({
+      path:value.target,
+      name:value.target,
+      component:Home,
+      meta:{title:value.title}
+    })
+  }
+})
 
 const router = createRouter({
   history: createWebHistory(),
