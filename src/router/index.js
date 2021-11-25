@@ -1,11 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
+const suffix=" | OIT - โรงเรียนโพนงามพิทยานุกูล"
+
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: { title: 'หน้าแรก' },
   },
   {
     path: '/about',
@@ -20,6 +23,12 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+router.beforeEach((to,from,next)=>{
+  document.title=to.meta.title+suffix
+
+  next()
 })
 
 export default router
