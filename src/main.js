@@ -14,6 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 // import js
 import "bootstrap"
+// import '@/assets/js/soft-ui-dashboard.min.js'
 
 // Vue.use(VuePageTitle, { router, suffix: '| OIT - โรงเรียนโพนงามพิทยานุกูล' })
 
