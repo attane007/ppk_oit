@@ -266,7 +266,7 @@ export const oit = [
     {
         title: "O43 การดำเนินการตามมาตรการส่งเสริมคุณธรรมและความโปร่งใสภายในหน่วยงาน",
         type: "inner-hypertext",
-        target: "/o42",
+        target: "/o43",
         icon: "strong",
     },
 
